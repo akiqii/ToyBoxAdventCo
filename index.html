@@ -1,0 +1,1758 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Christmas Advent Calendars - Magical Holiday Countdown</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<script>
+tailwind.config = {
+theme: {
+extend: {
+colors: {
+primary: '#dc2626',
+secondary: '#16a34a'
+},
+borderRadius: {
+'none': '0px',
+'sm': '4px',
+DEFAULT: '8px',
+'md': '12px',
+'lg': '16px',
+'xl': '20px',
+'2xl': '24px',
+'3xl': '32px',
+'full': '9999px',
+'button': '8px'
+}
+}
+}
+}
+</script>
+<style>
+.bestseller-highlight {
+  border: 2px solid #dc2626;
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.15);
+  position: relative;
+}
+
+.bestseller-highlight::before {
+  content: "Best Seller";
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: #dc2626;
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 9999px;
+}
+:where([class^="ri-"])::before {
+content: "\f3c2";
+}
+body {
+font-family: 'Inter', sans-serif;
+}
+.snowflake {
+position: absolute;
+top: -10px;
+color: rgba(255, 255, 255, 0.8);
+animation: fall linear infinite;
+pointer-events: none;
+}
+@keyframes fall {
+to {
+transform: translateY(100vh) rotate(360deg);
+}
+}
+.hero-glow {
+background: linear-gradient(135deg, rgba(220, 38, 38, 0.1) 0%, rgba(22, 163, 74, 0.1) 100%);
+}
+.card-hover {
+transition: all 0.3s ease;
+}
+.card-hover:hover {
+transform: translateY(-8px);
+box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+cursor: pointer; /* Added cursor pointer to indicate clickability */
+}
+.category-filter {
+transition: all 0.3s ease;
+}
+.category-filter.active {
+background-color: #dc2626;
+color: white;
+}
+/* Style to hide "page" sections initially */
+.page-section:not(#about):not(#contact):not(#products):not(#categories):not(#hero) {
+    display: none;
+}
+</style>
+</head>
+<body class="bg-red-50">
+<header class="bg-white shadow-sm sticky top-0 z-50">
+<nav class="w-full px-6 py-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center space-x-8">
+<h1 class="text-2xl font-['Pacifico'] text-primary">ToyBox Advent Co</h1>
+<div class="hidden md:flex space-x-6">
+<a href="#hero" class="text-gray-700 hover:text-primary transition-colors nav-link">Home</a>
+<a href="#products" class="text-gray-700 hover:text-primary transition-colors nav-link">Products</a>
+<a href="#about" class="text-gray-700 hover:text-primary transition-colors nav-link">About</a>
+<a href="#contact" class="text-gray-700 hover:text-primary transition-colors nav-link">Contact</a>
+</div>
+</div>
+<div class="flex items-center space-x-4">
+<button id="cart-btn" class="relative p-2 text-gray-700 hover:text-primary transition-colors">
+<div class="w-6 h-6 flex items-center justify-center">
+<i class="ri-shopping-cart-line text-xl"></i>
+</div>
+<span id="cart-count" class="absolute -top-1 -right-1 bg-primary text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">0</span>
+</button>
+</div>
+</div>
+</nav>
+</header>
+<main>
+<section id="hero" class="relative min-h-screen flex items-center overflow-hidden" style="background-image: url('https://readdy.ai/api/search-image?query=Magical%20Christmas%20winter%20wonderland%20scene%20with%20cozy%20warm%20lighting%2C%20snow-covered%20pine%20trees%2C%20twinkling%20golden%20lights%2C%20festive%20red%20and%20green%20colors%2C%20peaceful%20snowy%20landscape%2C%20soft%20bokeh%20effects%2C%20warm%20glow%20from%20windows%2C%20Christmas%20atmosphere%2C%20left%20side%20with%20warm%20golden%20light%20transitioning%20to%20snowy%20forest%20on%20right%2C%20cinematic%20lighting%2C%20high%20quality%20photography&width=1920&height=1080&seq=hero-christmas&orientation=landscape');">
+<div class="absolute inset-0 bg-gradient-to-r from-red-900/20 via-transparent to-transparent"></div>
+<div id="snow-container" class="absolute inset-0 pointer-events-none"></div>
+<div class="relative z-10 w-full px-6 py-20">
+<div class="max-w-7xl mx-auto">
+<div class="max-w-2xl">
+<h2 class="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
+Magical Christmas Countdown Begins
+</h2>
+<p class="text-xl text-white/90 mb-8 leading-relaxed">
+Discover our enchanting collection of advent calendars filled with delightful toys, puzzles, and surprises. Make every day until Christmas a magical adventure for your little ones.
+</p>
+<a href="#products">
+<button class="bg-primary hover:bg-red-700 text-white px-8 py-4 text-lg font-semibold !rounded-button transition-all duration-300 transform hover:scale-105 whitespace-nowrap">
+Shop Christmas Magic
+</button>
+</a>
+</div>
+</div>
+</div>
+</section>
+<section id="categories" class="py-16 bg-white">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center mb-12">
+<h3 class="text-3xl font-bold text-gray-900 mb-4">Shop by Category</h3>
+<p class="text-gray-600 max-w-2xl mx-auto">Choose from our carefully curated categories of advent calendars, each filled with unique toys and surprises</p>
+</div>
+<div class="flex flex-wrap justify-center gap-4 mb-12">
+<button class="category-filter active px-6 py-3 bg-gray-100 text-gray-700 !rounded-button font-medium whitespace-nowrap" data-category="all">
+All Products
+</button>
+<button class="category-filter px-6 py-3 bg-gray-100 text-gray-700 !rounded-button font-medium whitespace-nowrap" data-category="bestseller">
+Best Seller
+</button>
+<button class="category-filter px-6 py-3 bg-gray-100 text-gray-700 !rounded-button font-medium whitespace-nowrap" data-category="figurines">
+Figurines
+</button>
+<button class="category-filter px-6 py-3 bg-gray-100 text-gray-700 !rounded-button font-medium whitespace-nowrap" data-category="puzzles">
+Puzzles
+</button>
+<button class="category-filter px-6 py-3 bg-gray-100 text-gray-700 !rounded-button font-medium whitespace-nowrap" data-category="plushies">
+Plushies
+</button>
+<button class="category-filter px-6 py-3 bg-gray-100 text-gray-700 !rounded-button font-medium whitespace-nowrap" data-category="mixed">
+Mixed Toys
+</button>
+</section>
+<section id="products" class="py-16 bg-red-50">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center mb-12">
+<h3 class="text-3xl font-bold text-gray-900 mb-4">Featured Advent Calendars</h3>
+<p class="text-gray-600 max-w-2xl mx-auto">Each calendar contains 24 carefully selected surprises to make your Christmas countdown unforgettable</p>
+</div>
+<div id="products-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<div class="product-card bg-white rounded-lg shadow-lg overflow-hidden card-hover" data-category="figurines" data-image="https://readdy.ai/api/search-image?query=Christmas%20advent%20calendar%20box%20filled%20with%20colorful%20miniature%20figurines%20and%20collectible%20toys%2C%20festive%20red%20and%20green%20packaging%2C%2024%20numbered%20compartments%2C%20holiday%20themed%20characters%2C%20Santa%20figures%2C%20reindeer%2C%20elves%2C%20snow%20globes%2C%20magical%20Christmas%20atmosphere%2C%20product%20photography%2C%20clean%20white%20background&width=400&height=400&seq=figurines-calendar&orientation=squarish" data-description="Unbox 24 days of miniature festive joy! This calendar features high-quality, hand-painted figurines including Santa, elves, reindeer, and more. Perfect for starting or expanding a miniature Christmas scene.">
+<div class="aspect-square overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=Christmas%20advent%20calendar%20box%20filled%20with%20colorful%20miniature%20figurines%20and%20collectible%20toys%2C%20festive%20red%20and%20green%20packaging%2C%2024%20numbered%20compartments%2C%20holiday%20themed%20characters%2C%20Santa%20figures%2C%20reindeer%2C%20elves%2C%20snow%20globes%2C%20magical%20Christmas%20atmosphere%2C%20product%20photography%2C%20clean%20white%20background&width=400&height=400&seq=figurines-calendar&orientation=squarish"
+alt="Figurines Advent Calendar" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<h4 class="text-xl font-semibold text-gray-900 mb-2">Christmas Figurines Collection</h4>
+<p class="text-gray-600 mb-4">24 delightful miniature Christmas characters including Santa, reindeer, and festive friends</p>
+<div class="flex items-center justify-between">
+<span class="text-2xl font-bold text-primary">$34.99</span>
+<button class="add-to-cart bg-secondary hover:bg-green-700 text-white px-4 py-2 !rounded-button font-medium transition-colors whitespace-nowrap" data-product-index="0">
+Add to Cart
+</button>
+</div>
+</div>
+</div>
+<div class="product-card bg-white rounded-lg shadow-lg overflow-hidden card-hover" data-category="puzzles" data-bestseller="true" data-image="https://readdy.ai/api/search-image?query=Christmas%20advent%20calendar%20with%20mini%20jigsaw%20puzzles%20and%20brain%20teasers%2C%20colorful%20puzzle%20pieces%2C%20holiday%20themed%20designs%2C%20snowflakes%2C%20Christmas%20trees%2C%20festive%20patterns%2C%20educational%20toys%2C%2024%20different%20mini%20puzzles%2C%20bright%20colors%2C%20product%20photography%2C%20clean%20white%20background&width=400&height=400&seq=puzzles-calendar&orientation=squarish" data-description="Our Best Seller! Contains 24 unique, holiday-themed mini jigsaw puzzles and brain teasers. Each day brings a new challenge and a beautiful festive design to complete. Great for developing logic and fine motor skills.">
+<div class="aspect-square overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=Christmas%20advent%20calendar%20with%20mini%20jigsaw%20puzzles%20and%20brain%20teasers%2C%20colorful%20puzzle%20pieces%2C%20holiday%20themed%20designs%2C%20snowflakes%2C%20Christmas%20trees%2C%20festive%20patterns%2C%20educational%20toys%2C%2024%20different%20mini%20puzzles%2C%20bright%20colors%2C%20product%20photography%2C%20clean%20white%20background&width=400&height=400&seq=puzzles-calendar&orientation=squarish"
+alt="Puzzles Advent Calendar" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<h4 class="text-xl font-semibold text-gray-900 mb-2">Mini Puzzle Adventure</h4>
+<p class="text-gray-600 mb-4">24 engaging mini puzzles and brain teasers with beautiful Christmas designs</p>
+<div class="flex items-center justify-between">
+<span class="text-2xl font-bold text-primary">$29.99</span>
+<button class="add-to-cart bg-secondary hover:bg-green-700 text-white px-4 py-2 !rounded-button font-medium transition-colors whitespace-nowrap" data-product-index="1">
+Add to Cart
+</button>
+</div>
+</div>
+</div>
+<div class="product-card bg-white rounded-lg shadow-lg overflow-hidden card-hover" data-category="plushies" data-image="https://readdy.ai/api/search-image?query=Christmas%20advent%20calendar%20filled%20with%20adorable%20mini%20plush%20toys%20and%20soft%20stuffed%20animals%2C%20cute%20Christmas%20themed%20plushies%2C%20tiny%20teddy%20bears%2C%20reindeer%2C%20penguins%2C%20snowmen%2C%20soft%20textures%2C%20cozy%20holiday%20atmosphere%2C%2024%20compartments%20with%20plush%20surprises%2C%20warm%20lighting%2C%20product%20photography%2C%20clean%20white%20background&width=400&height=400&seq=plushies-calendar&orientation=squarish" data-description="A cuddly surprise every day! This calendar includes 24 super soft, mini plush toys featuring classic Christmas characters like snowmen, bears, and reindeer. They're the perfect size for little hands and make great tree decorations.">
+<div class="aspect-square overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=Christmas%20advent%20calendar%20filled%20with%20adorable%20mini%20plush%20toys%20and%20soft%20stuffed%20animals%2C%20cute%20Christmas%20themed%20plushies%2C%20tiny%20teddy%20bears%2C%20reindeer%2C%20penguins%2C%20snowmen%2C%20soft%20textures%2C%20cozy%20holiday%20atmosphere%2C%2024%20compartments%20with%20plush%20surprises%2C%20warm%20lighting%2C%20product%20photography%2C%20clean%20white%20background&width=400&height=400&seq=plushies-calendar&orientation=squarish"
+alt="Plushies Advent Calendar" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<h4 class="text-xl font-semibold text-gray-900 mb-2">Cuddly Christmas Friends</h4>
+<p class="text-gray-600 mb-4">24 adorable mini plush toys perfect for snuggling and imaginative play</p>
+<div class="flex items-center justify-between">
+<span class="text-2xl font-bold text-primary">$39.99</span>
+<button class="add-to-cart bg-secondary hover:bg-green-700 text-white px-4 py-2 !rounded-button font-medium transition-colors whitespace-nowrap" data-product-index="2">
+Add to Cart
+</button>
+</div>
+</div>
+</div>
+<div class="product-card bg-white rounded-lg shadow-lg overflow-hidden card-hover" data-category="mixed" data-image="https://readdy.ai/api/search-image?query=Christmas%20advent%20calendar%20with%20mixed%20variety%20of%20toys%20including%20keychains%2C%20stickers%2C%20mini%20games%2C%20small%20figurines%2C%20candy%2C%20erasers%2C%20temporary%20tattoos%2C%20festive%20surprises%2C%20colorful%20assortment%2C%2024%20different%20compartments%2C%20holiday%20magic%2C%20diverse%20toy%20collection%2C%20product%20photography%2C%20clean%20white%20background&width=400&height=400&seq=mixed-calendar&orientation=squarish" data-description="Can't choose? Get the Ultimate Surprise Mix! This calendar contains 24 diverse items including keychains, Christmas stickers, mini games, erasers, and small novelty toys. A perfect mix for non-stop holiday fun and excitement.">
+<div class="aspect-square overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=Christmas%20advent%20calendar%20with%20mixed%20variety%20of%20toys%20including%20keychains%2C%20stickers%2C%20mini%20games%2C%20small%20figurines%2C%20candy%2C%20erasers%2C%20temporary%20tattoos%2C%20festive%20surprises%2C%20colorful%20assortment%2C%2024%20different%20compartments%2C%20holiday%20magic%2C%20diverse%20toy%20collection%2C%20product%20photography%2C%20clean%20white%20background&width=400&height=400&seq=mixed-calendar&orientation=squarish"
+alt="Mixed Toys Advent Calendar" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<h4 class="text-xl font-semibold text-gray-900 mb-2">Ultimate Surprise Mix</h4>
+<p class="text-gray-600 mb-4">24 different surprises including stickers, mini games, and more</p>
+<div class="flex items-center justify-between">
+<span class="text-2xl font-bold text-primary">$24.99</span>
+<button class="add-to-cart bg-secondary hover:bg-green-700 text-white px-4 py-2 !rounded-button font-medium transition-colors whitespace-nowrap" data-product-index="3">
+Add to Cart
+</button>
+</div>
+</div>
+</div>
+<div class="product-card bg-white rounded-lg shadow-lg overflow-hidden card-hover" data-category="figurines" data-bestseller="true" data-image="https://readdy.ai/api/search-image?query=Premium%20Christmas%20advent%20calendar%20with%20detailed%20miniature%20winter%20village%20figurines%2C%20snow-covered%20houses%2C%20Christmas%20market%20stalls%2C%20tiny%20people%20figures%2C%20festive%20decorations%2C%20high%20quality%20collectibles%2C%20magical%20winter%20scene%2C%2024%20building%20pieces%2C%20product%20photography%2C%20clean%20white%20background&width=400&height=400&seq=village-calendar&orientation=squarish" data-description="Build a new piece of your enchanting Winter Village every day! This deluxe calendar features 24 detailed, interconnecting miniature building pieces, resulting in a beautiful holiday scene by Christmas Day. A wonderful tradition for the whole family.">
+<div class="aspect-square overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=Premium%20Christmas%20advent%20calendar%20with%20detailed%20miniature%20winter%20village%20figurines%2C%20snow-covered%20houses%2C%20Christmas%20market%20stalls%2C%20tiny%20people%20figures%2C%20festive%20decorations%2C%20high%20quality%20collectibles%2C%20magical%20winter%20scene%2C%2024%20building%20pieces%2C%20product%20photography%2C%20clean%20white%20background&width=400&height=400&seq=village-calendar&orientation=squarish"
+alt="Winter Village Calendar" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<h4 class="text-xl font-semibold text-gray-900 mb-2">Winter Village Builder</h4>
+<p class="text-gray-600 mb-4">Build your own magical winter village with 24 detailed miniature pieces</p>
+<div class="flex items-center justify-between">
+<span class="text-2xl font-bold text-primary">$49.99</span>
+<button class="add-to-cart bg-secondary hover:bg-green-700 text-white px-4 py-2 !rounded-button font-medium transition-colors whitespace-nowrap" data-product-index="4">
+Add to Cart
+</button>
+</div>
+</div>
+</div>
+<div class="product-card bg-white rounded-lg shadow-lg overflow-hidden card-hover" data-category="puzzles" data-image="https://readdy.ai/api/search-image?query=Christmas%20advent%20calendar%20with%20educational%20STEM%20puzzles%20and%20learning%20activities%2C%20colorful%20brain%20teasers%2C%20logic%20games%2C%20math%20puzzles%2C%20science%20experiments%2C%20educational%20toys%2C%20learning%20through%20play%2C%2024%20different%20challenges%2C%20bright%20engaging%20colors%2C%20product%20photography%2C%20clean%20white%20background&width=400&height=400&seq=stem-calendar&orientation=squarish" data-description="Turn the countdown into a learning adventure! This calendar provides 24 STEM-focused puzzles and mini experiments that promote critical thinking, logic, and problem-solving skills, all with a fun, festive twist.">
+<div class="aspect-square overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=Christmas%20advent%20calendar%20with%20educational%20STEM%20puzzles%20and%20learning%20activities%2C%20colorful%20brain%20teasers%2C%20logic%20games%2C%20math%20puzzles%2C%20science%20experiments%2C%20educational%20toys%2C%20learning%20through%20play%2C%2024%20different%20challenges%2C%20bright%20engaging%20colors%2C%20product%20photography%2C%20clean%20white%20background&width=400&height=400&seq=stem-calendar&orientation=squarish"
+alt="STEM Learning Calendar" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<h4 class="text-xl font-semibold text-gray-900 mb-2">STEM Learning Adventure</h4>
+<p class="text-gray-600 mb-4">Educational puzzles and experiments that make learning fun this Christmas</p>
+<div class="flex items-center justify-between">
+<span class="text-2xl font-bold text-primary">$44.99</span>
+<button class="add-to-cart bg-secondary hover:bg-green-700 text-white px-4 py-2 !rounded-button font-medium transition-colors whitespace-nowrap" data-product-index="5">
+Add to Cart
+</button>
+</div>
+</div>
+</div>
+<div class="product-card bg-white rounded-lg shadow-lg overflow-hidden card-hover" data-category="plushies" data-image="https://readdy.ai/api/search-image?query=Christmas%20advent%20calendar%20with%20farm%20animal%20themed%20mini%20plush%20toys%2C%20cute%20baby%20animals%2C%20soft%20fabric%20textures%2C%20barnyard%20friends%2C%20sheep%2C%20cows%2C%20pigs%2C%20chickens%2C%20horses%2C%20adorable%20expressions%2C%20cozy%20rural%20Christmas%20theme%2C%2024%20different%20animals%2C%20product%20photography%2C%20clean%20white%20background&width=400&height=400&seq=farm-calendar&orientation=squarish" data-description="A delightful collection of 24 mini plush farm animals! Each soft, tiny friend (cows, pigs, sheep, chickens, etc.) brings a touch of cozy countryside charm to the holiday. Perfect for kids who love animals and imaginative rural play.">
+<div class="aspect-square overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=Christmas%20advent%20calendar%20with%20farm%20animal%20themed%20mini%20plush%20toys%2C%20cute%20baby%20animals%2C%20soft%20fabric%20textures%2C%20barnyard%20friends%2C%20sheep%2C%20cows%2C%20pigs%2C%20chickens%2C%20horses%2C%20adorable%20expressions%2C%20cozy%20rural%20Christmas%20theme%2C%2024%20different%20animals%2C%20product%20photography%2C%20clean%20white%20background&width=400&height=400&seq=farm-calendar&orientation=squarish"
+alt="Farm Friends Calendar" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<h4 class="text-xl font-semibold text-gray-900 mb-2">Farm Friends Collection</h4>
+<p class="text-gray-600 mb-4">Meet 24 adorable farm animal friends in this cozy countryside Christmas</p>
+<div class="flex items-center justify-between">
+<span class="text-2xl font-bold text-primary">$36.99</span>
+<button class="add-to-cart bg-secondary hover:bg-green-700 text-white px-4 py-2 !rounded-button font-medium transition-colors whitespace-nowrap" data-product-index="6">
+Add to Cart
+</button>
+</div>
+</div>
+</div>
+<div class="product-card bg-white rounded-lg shadow-lg overflow-hidden card-hover" data-category="mixed" data-image="https://readdy.ai/api/search-image?query=Deluxe%20Christmas%20advent%20calendar%20with%20premium%20mixed%20toys%20and%20accessories%2C%20jewelry%2C%20hair%20clips%2C%20rings%2C%20bracelets%2C%20nail%20art%2C%20beauty%20items%2C%20fashion%20accessories%2C%20sparkly%20decorations%2C%20glamorous%20surprises%2C%2024%20different%20items%2C%20luxury%20presentation%2C%20product%20photography%2C%20clean%20white%20background&width=400&height=400&seq=deluxe-calendar&orientation=squarish" data-description="The ultimate luxury countdown! This box is filled with 24 premium accessories perfect for kids who love sparkle: jewelry pieces, decorative hair clips, mini nail art supplies, and other fashionable surprises.">
+<div class="aspect-square overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=Deluxe%20Christmas%20advent%20calendar%20with%20premium%20mixed%20toys%20and%20accessories%2C%20jewelry%2C%20hair%20clips%2C%20rings%2C%20bracelets%2C%20nail%20art%2C%20beauty%20items%2C%20fashion%20accessories%2C%20sparkly%20decorations%2C%20glamorous%20surprises%2C%2024%20different%20items%2C%20luxury%20presentation%2C%20product%20photography%2C%20clean%20white%20background&width=400&height=400&seq=deluxe-calendar&orientation=squarish"
+alt="Deluxe Accessories Calendar" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<h4 class="text-xl font-semibold text-gray-900 mb-2">Deluxe Accessories Box</h4>
+<p class="text-gray-600 mb-4">Premium collection of jewelry, hair accessories, and fashion items</p>
+<div class="flex items-center justify-between">
+<span class="text-2xl font-bold text-primary">$54.99</span>
+<button class="add-to-cart bg-secondary hover:bg-green-700 text-white px-4 py-2 !rounded-button font-medium transition-colors whitespace-nowrap" data-product-index="7">
+Add to Cart
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="about" class="page-section py-16 bg-white min-h-screen">
+    <div class="my-8 px-6 max-w-7xl mx-auto">
+        <button onclick="backToShop()" 
+            class="px-6 py-3 bg-red-600 hover:bg-red-700 text-white rounded-lg font-medium transition">
+            ⬅ Back to Shop
+        </button>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-6 text-center">
+        <h3 class="text-4xl font-bold text-gray-900 mb-8">Why Choose Our Advent Calendars?</h3>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            <div class="p-6">
+                <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="ri-gift-line text-2xl text-primary"></i>
+                </div>
+                <h4 class="text-xl font-semibold text-gray-900 mb-3">Premium Quality</h4>
+                <p class="text-gray-600">Each toy is carefully selected for quality, safety, and educational value</p>
+            </div>
+            <div class="p-6">
+                <div class="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="ri-heart-line text-2xl text-secondary"></i>
+                </div>
+                <h4 class="text-xl font-semibold text-gray-900 mb-3">Age Appropriate</h4>
+                <p class="text-gray-600">Designed with child development in mind for safe and engaging play</p>
+            </div>
+            <div class="p-6">
+                <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="ri-truck-line text-2xl text-primary"></i>
+                </div>
+                <h4 class="text-xl font-semibold text-gray-900 mb-3">Fast Shipping</h4>
+                <p class="text-gray-600">Quick delivery to ensure your calendar arrives before December 1st</p>
+            </div>
+        </div>
+
+        <h4 class="text-3xl font-bold text-gray-900 mb-6 mt-12">See Our Magic in Action</h4>
+        <div class="max-w-4xl mx-auto bg-gray-100 p-4 rounded-lg shadow-xl">
+            <div class="aspect-video">
+<iframe 
+  width="100%" 
+  height="100%" 
+  src="https://www.youtube-nocookie.com/embed/DJjDBC2KRbw"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  allowfullscreen
+  class="rounded-lg shadow-md w-full h-full">
+</iframe>
+
+
+
+            </div>
+            <p class="text-sm text-gray-500 mt-4">Discover the joy and care we put into every Advent Calendar box.</p>
+        </div>
+    </div>
+</section>
+<section id="faq-page" class="page-section py-16 bg-white min-h-screen">
+<div class="my-8 px-6 max-w-7xl mx-auto">
+    <button onclick="backToShop()" 
+        class="px-6 py-3 bg-red-600 hover:bg-red-700 text-white rounded-lg font-medium transition">
+        ⬅ Back to Shop
+    </button>
+</div>
+
+    <div class="max-w-4xl mx-auto px-6">
+        <h3 class="text-4xl font-bold text-gray-900 mb-8 text-center">Frequently Asked Questions (FAQ)</h3>
+        <div class="space-y-6">
+            <div class="bg-red-50 p-6 rounded-lg shadow-sm">
+                <h4 class="text-xl font-semibold text-primary mb-3">Q: When will my calendar arrive?</h4>
+                <p class="text-gray-700">A: Orders are processed within 2–3 business days. For delivery, please allow around 7 days within Asia and up to 14 days worldwide. To receive your calendar before December 1st, please order by 15 November; for Christmas Day delivery, please order by 1 December.</p>
+            </div>
+            <div class="bg-red-50 p-6 rounded-lg shadow-sm">
+                <h4 class="text-xl font-semibold text-primary mb-3">Q: What age range are the toys suitable for?</h4>
+                <p class="text-gray-700">A: Most of our calendars are designed for children aged 3 and up. Please check the specific product description for age recommendations and small parts warnings.</p>
+            </div>
+            <div class="bg-red-50 p-6 rounded-lg shadow-sm">
+                <h4 class="text-xl font-semibold text-primary mb-3">Q: Can I return a calendar if my child already has it?</h4>
+                <p class="text-gray-700">A: Yes, we accept returns on unopened calendars within 30 days of purchase. Please see the Shipping Info / Returns page for full details.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="shipping-info-page" class="page-section py-16 bg-red-50 min-h-screen">
+<div class="my-8 px-6 max-w-7xl mx-auto">
+    <button onclick="backToShop()" 
+        class="px-6 py-3 bg-red-600 hover:bg-red-700 text-white rounded-lg font-medium transition">
+        ⬅ Back to Shop
+    </button>
+</div>
+
+    <div class="max-w-4xl mx-auto px-6">
+        <h3 class="text-4xl font-bold text-gray-900 mb-8 text-center">Shipping & Delivery Information</h3>
+        <div class="space-y-6 bg-white p-8 rounded-lg shadow-lg">
+            <h4 class="text-2xl font-semibold text-primary mb-3">Shipping Rates & Times</h4>
+            <ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
+                <li><strong>Asia:</strong> Estimated delivery within 7 days after dispatch. Shipping is free.</li>
+                <li><strong>Worldwide:</strong> Estimated delivery within 14 days after dispatch. Flat shipping fee of $10 per order.</li>
+                <li>All orders are processed within 2–3 business days. Tracking information will be sent via email once your order ships.</li>
+                <li>For delivery before 1 December, please place your order by 15 November. For delivery by Christmas Day, please order by 1 December.</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section id="returns-page" class="page-section py-16 bg-white min-h-screen">
+<div class="my-8 px-6 max-w-7xl mx-auto">
+    <button onclick="backToShop()" 
+        class="px-6 py-3 bg-red-600 hover:bg-red-700 text-white rounded-lg font-medium transition">
+        ⬅ Back to Shop
+    </button>
+</div>
+
+    <div class="max-w-4xl mx-auto px-6">
+        <h3 class="text-4xl font-bold text-gray-900 mb-8 text-center">Returns Policy</h3>
+        <div class="space-y-6 bg-red-50 p-8 rounded-lg shadow-lg">
+            <p class="text-lg text-gray-800">We want you to be delighted with your purchase. If you need to make a return, please note the following:</p>
+            <ul class="list-disc list-inside space-y-3 text-gray-700 ml-4">
+                <li><strong>Return window:</strong> You may request a return within 7 days of receiving your order.</li>
+                <li><strong>Condition of items:</strong> Items should be unused and in their original packaging unless they arrived damaged or defective.</li>
+                <li><strong>Damaged or incorrect items:</strong> If your calendar arrives damaged or incorrect, we will cover the return shipping cost.</li>
+                <li><strong>Change of mind:</strong> For other reasons (e.g. change of mind), a return shipping fee may apply.</li>
+                <li>To initiate a return, please contact us via the Contact Us page with your order number and details.</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section id="privacy-policy-page" class="page-section py-16 bg-red-50 min-h-screen">
+<div class="my-8 px-6 max-w-7xl mx-auto">
+    <button onclick="backToShop()" 
+        class="px-6 py-3 bg-red-600 hover:bg-red-700 text-white rounded-lg font-medium transition">
+        ⬅ Back to Shop
+    </button>
+</div>
+
+    <div class="max-w-4xl mx-auto px-6">
+        <h3 class="text-4xl font-bold text-gray-900 mb-8 text-center">Privacy Policy</h3>
+        <div class="space-y-6 bg-white p-8 rounded-lg shadow-lg text-gray-700">
+            <p>Your privacy is important to us. This policy explains how we collect, use, and protect your personal information.</p>
+            <h4 class="text-xl font-semibold text-primary">Information We Collect</h4>
+            <p>We collect information such as your name, email address, shipping address, and payment details when you place an order or sign up for our newsletter.</p>
+            <h4 class="text-xl font-semibold text-primary">How We Use Your Information</h4>
+            <p>We use your information solely for processing your order, providing customer support, and sending marketing communications if you have opted in.</p>
+        </div>
+    </div>
+</section>
+
+<section id="terms-of-service-page" class="page-section py-16 bg-white min-h-screen">
+<div class="my-8 px-6 max-w-7xl mx-auto">
+    <button onclick="backToShop()" 
+        class="px-6 py-3 bg-red-600 hover:bg-red-700 text-white rounded-lg font-medium transition">
+        ⬅ Back to Shop
+    </button>
+</div>
+
+    <div class="max-w-4xl mx-auto px-6">
+        <h3 class="text-4xl font-bold text-gray-900 mb-8 text-center">Terms of Service</h3>
+        <div class="space-y-6 bg-red-50 p-8 rounded-lg shadow-lg text-gray-700">
+            <p>By using the ToyBox Advent Co website, you agree to comply with and be bound by the following terms and conditions:</p>
+            <ul class="list-disc list-inside space-y-3 ml-4">
+                <li>Content on this site is for your general information and use only. It is subject to change without notice.</li>
+                <li>The use of any information or materials on this website is entirely at your own risk.</li>
+                <li>Unauthorized use of this website may give rise to a claim for damages and/or be a criminal offense.</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+</main>
+<section id="contact" class="py-16 bg-red-50">
+<div class="max-w-4xl mx-auto px-6">
+<div class="text-center mb-12">
+<h3 class="text-3xl font-bold text-gray-900 mb-4">Get in Touch</h3>
+<p class="text-gray-600">Have questions about our advent calendars? We're here to help make your Christmas magical!</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<div>
+<h4 class="text-xl font-semibold text-gray-900 mb-6">Contact Information</h4>
+<div class="space-y-4">
+<div class="flex items-center space-x-3">
+<div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
+<i class="ri-phone-line text-primary"></i>
+</div>
+<div>
+<p class="font-medium text-gray-900">Phone</p>
+<p class="text-gray-600">+1 (555) 123-4567</p>
+</div>
+</div>
+<div class="flex items-center space-x-3">
+<div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
+<i class="ri-mail-line text-primary"></i>
+</div>
+<div>
+<p class="font-medium text-gray-900">Email</p>
+<p class="text-gray-600">toyboxadventco@gmail.com</p>
+</div>
+</div>
+<div class="flex items-center space-x-3">
+<div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
+<i class="ri-map-pin-line text-primary"></i>
+</div>
+<div>
+<p class="font-medium text-gray-900">Address</p>
+<p class="text-gray-600">123 Holiday Lane<br>Christmas Valley, CV 12345</p>
+</div>
+</div>
+</div>
+</div>
+<div>
+<form id="contact-form" class="bg-white p-8 rounded-lg shadow-lg">
+<div class="mb-6">
+<label for="name" class="block text-sm font-medium text-gray-700 mb-2">Your Name</label>
+<input type="text" id="name" name="name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-sm">
+</div>
+<div class="mb-6">
+<label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+<input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-sm">
+</div>
+<div class="mb-6">
+<label for="message" class="block text-sm font-medium text-gray-700 mb-2">Message</label>
+<textarea id="message" name="message" rows="4" required maxlength="500" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-sm resize-none"></textarea>
+<div class="text-right mt-1">
+<span id="char-count" class="text-xs text-gray-500">0/500</span>
+</div>
+</div>
+<button type="submit" class="w-full bg-primary hover:bg-red-700 text-white py-3 px-6 !rounded-button font-medium transition-colors whitespace-nowrap">
+Send Message
+</button>
+</form>
+</div>
+</div>
+</div>
+</section>
+
+<div id="product-detail-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden">
+  <div class="flex items-center justify-center min-h-screen p-4">
+    <div class="bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-hidden">
+      <div class="p-6 border-b">
+        <div class="flex items-center justify-between">
+          <h3 id="detail-product-name" class="text-2xl font-semibold text-gray-900">Product Name</h3>
+          <button id="close-detail-modal" class="text-gray-400 hover:text-gray-600">
+            <i class="ri-close-line text-xl"></i>
+          </button>
+        </div>
+      </div>
+      <div class="p-6 overflow-y-auto max-h-[calc(90vh-100px)]">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="md:col-span-1">
+            <img id="detail-product-image" src="" alt="Product Image" class="w-full h-auto object-cover rounded-lg shadow-md">
+          </div>
+          <div class="md:col-span-1">
+            <p id="detail-product-description" class="text-gray-600 mb-6 text-lg"></p>
+            <div class="flex items-center justify-between mb-6">
+              <span class="text-3xl font-bold text-primary" id="detail-product-price">$0.00</span>
+              <div id="detail-add-to-cart-container">
+                  <button id="detail-add-to-cart" class="bg-secondary hover:bg-green-700 text-white px-6 py-3 !rounded-button font-medium transition-colors whitespace-nowrap">
+                      Add to Cart
+                  </button>
+              </div>
+            </div>
+            <p class="text-sm text-gray-500 mt-4">24 unique surprises included in every calendar!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="cart-modal" class="fixed inset-0 bg-white z-50 hidden">
+<div class="flex flex-col h-full">
+<div class="p-6 border-b bg-white sticky top-0 z-10">
+<div class="flex items-center justify-between max-w-4xl mx-auto">
+<h3 class="text-2xl font-semibold text-gray-900">Shopping Cart</h3>
+<button id="close-cart" class="text-gray-400 hover:text-gray-600 p-2">
+<i class="ri-close-line text-2xl"></i>
+</button>
+</div>
+</div>
+<div class="flex-1 overflow-y-auto">
+<div class="max-w-4xl mx-auto p-6">
+<div id="cart-items" class="mb-8">
+<div class="text-center text-gray-500 py-16">
+<i class="ri-shopping-cart-line text-6xl mb-4"></i>
+<p class="text-xl">Your cart is empty</p>
+<p class="text-gray-400 mt-2">Add some magical advent calendars to get started!</p>
+</div>
+</div>
+</div>
+</div>
+<div class="border-t bg-white sticky bottom-0 z-10">
+<div class="max-w-4xl mx-auto p-6">
+<div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+<div class="text-center sm:text-left">
+<span class="text-lg font-semibold text-gray-900">Total: </span>
+<span id="cart-total" class="font-bold text-2xl text-primary">$0.00</span>
+</div>
+<button id="clear-cart-btn" class="w-full sm:w-auto text-gray-700 bg-white border border-gray-300 hover:bg-red-50 py-3 px-8 !rounded-button font-medium transition-colors whitespace-nowrap text-lg order-first sm:order-none">
+  Clear Cart
+</button>
+<button id="checkout-btn" class="w-full sm:w-auto bg-secondary hover:bg-green-700 text-white py-3 px-8 !rounded-button font-medium transition-colors whitespace-nowrap text-lg">
+Proceed to Checkout
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="checkout-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden">
+<div class="flex items-center justify-center min-h-screen p-4">
+<div class="bg-white rounded-lg max-w-2xl w-full max-h-[90vh] overflow-hidden">
+<div class="p-6 border-b">
+<div class="flex items-center justify-between">
+<h3 class="text-xl font-semibold text-gray-900">Checkout</h3>
+<button id="close-checkout" class="text-gray-400 hover:text-gray-600">
+<i class="ri-close-line text-xl"></i>
+</button>
+</div>
+</div>
+<div class="overflow-y-auto max-h-[calc(90vh-200px)]">
+<form id="checkout-form" class="p-6 space-y-6">
+<div class="bg-gray-50 p-4 rounded-lg mb-6">
+<h4 class="font-semibold text-gray-900 mb-2">Order Summary</h4>
+<div id="checkout-items" class="space-y-2 mb-3">
+</div>
+<div class="border-t pt-3">
+<div class="flex justify-between font-semibold text-lg">
+<span>Total:</span>
+<span id="checkout-total" class="text-primary">$0.00</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div>
+<h4 class="font-semibold text-gray-900 mb-4">Contact Information</h4>
+<div class="space-y-4">
+<div>
+<label for="checkout-email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+<input type="email" id="checkout-email" name="email" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-sm">
+</div>
+<div>
+<label for="checkout-phone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+<input type="tel" id="checkout-phone" name="phone" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-sm">
+</div>
+</div>
+</div>
+<div>
+<h4 class="font-semibold text-gray-900 mb-4">Shipping Address</h4>
+<div class="space-y-4">
+<div class="grid grid-cols-2 gap-3">
+<div>
+<label for="first-name" class="block text-sm font-medium text-gray-700 mb-1">First Name</label>
+<input type="text" id="first-name" name="firstName" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-sm">
+</div>
+<div>
+<label for="last-name" class="block text-sm font-medium text-gray-700 mb-1">Last Name</label>
+<input type="text" id="last-name" name="lastName" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-sm">
+</div>
+</div>
+<div>
+<label for="address-line-1" class="block text-sm font-medium text-gray-700 mb-1">Address Line 1</label>
+<input type="text" id="address-line-1" name="addressLine1" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-sm">
+</div>
+<div>
+<label for="address-line-2" class="block text-sm font-medium text-gray-700 mb-1">Address Line 2 (Optional)</label>
+<input type="text" id="address-line-2" name="addressLine2" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-sm">
+</div>
+<div class="grid grid-cols-2 gap-3">
+<div>
+<label for="city" class="block text-sm font-medium text-gray-700 mb-1">City</label>
+<input type="text" id="city" name="city" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-sm">
+</div>
+<div>
+<label for="state" class="block text-sm font-medium text-gray-700 mb-1">State/Province</label>
+<input type="text" id="state" name="state" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-sm">
+</div>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<div>
+<label for="zip-code" class="block text-sm font-medium text-gray-700 mb-1">ZIP/Postal Code</label>
+<input type="text" id="zip-code" name="zipCode" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-sm">
+</div>
+<div>
+<label for="country" class="block text-sm font-medium text-gray-700 mb-1">Country</label>
+<div class="relative">
+<button type="button" id="country-select" class="w-full px-3 py-2 text-left border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-sm bg-white">
+<span id="selected-country">Select Country</span>
+<i class="ri-arrow-down-s-line float-right mt-0.5"></i>
+</button>
+<div id="country-dropdown" class="absolute top-full left-0 right-0 bg-white border border-gray-300 rounded-lg shadow-lg z-10 hidden max-h-48 overflow-y-auto">
+<div class="country-option px-3 py-2 hover:bg-gray-50 cursor-pointer" data-value="US">United States</div>
+<div class="country-option px-3 py-2 hover:bg-gray-50 cursor-pointer" data-value="CA">Canada</div>
+<div class="country-option px-3 py-2 hover:bg-gray-50 cursor-pointer" data-value="GB">United Kingdom</div>
+<div class="country-option px-3 py-2 hover:bg-gray-50 cursor-pointer" data-value="AU">Australia</div>
+<div class="country-option px-3 py-2 hover:bg-gray-50 cursor-pointer" data-value="DE">Germany</div>
+<div class="country-option px-3 py-2 hover:bg-gray-50 cursor-pointer" data-value="FR">France</div>
+<div class="country-option px-3 py-2 hover:bg-gray-50 cursor-pointer" data-value="IT">Italy</div>
+<div class="country-option px-3 py-2 hover:bg-gray-50 cursor-pointer" data-value="ES">Spain</div>
+<div class="country-option px-3 py-2 hover:bg-gray-50 cursor-pointer" data-value="NL">Netherlands</div>
+<div class="country-option px-3 py-2 hover:bg-gray-50 cursor-pointer" data-value="SE">Sweden</div>
+</div>
+<input type="hidden" id="country-input" name="country" required>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="border-t pt-6">
+<div class="flex items-start space-x-3 mb-4">
+<input type="checkbox" id="same-as-shipping" class="mt-1 opacity-0 absolute">
+<div class="w-4 h-4 border border-gray-300 rounded bg-white mt-1 flex items-center justify-center relative cursor-pointer">
+<i class="ri-check-line text-xs text-white hidden"></i>
+</div>
+<label for="same-as-shipping" class="text-sm text-gray-700 cursor-pointer">Billing address is the same as shipping address</label>
+</div>
+<div id="billing-section" class="space-y-4">
+<h4 class="font-semibold text-gray-900 mb-4">Billing Address</h4>
+<div class="grid grid-cols-2 gap-3">
+<div>
+<label for="billing-first-name" class="block text-sm font-medium text-gray-700 mb-1">First Name</label>
+<input type="text" id="billing-first-name" name="billingFirstName" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-sm">
+</div>
+<div>
+<label for="billing-last-name" class="block text-sm font-medium text-gray-700 mb-1">Last Name</label>
+<input type="text" id="billing-last-name" name="billingLastName" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-sm">
+</div>
+</div>
+<div>
+<label for="billing-address-1" class="block text-sm font-medium text-gray-700 mb-1">Address Line 1</label>
+<input type="text" id="billing-address-1" name="billingAddressLine1" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-sm">
+</div>
+<div>
+<label for="billing-address-2" class="block text-sm font-medium text-gray-700 mb-1">Address Line 2 (Optional)</label>
+<input type="text" id="billing-address-2" name="billingAddressLine2" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-sm">
+</div>
+<div class="grid grid-cols-2 gap-3">
+<div>
+<label for="billing-city" class="block text-sm font-medium text-gray-700 mb-1">City</label>
+<input type="text" id="billing-city" name="billingCity" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-sm">
+</div>
+<div>
+<label for="billing-state" class="block text-sm font-medium text-gray-700 mb-1">State/Province</label>
+<input type="text" id="billing-state" name="billingState" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-sm">
+</div>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<div>
+<label for="billing-zip" class="block text-sm font-medium text-gray-700 mb-1">ZIP/Postal Code</label>
+<input type="text" id="billing-zip" name="billingZipCode" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-sm">
+</div>
+<div>
+<label for="billing-country" class="block text-sm font-medium text-gray-700 mb-1">Country</label>
+<div class="relative">
+<button type="button" id="billing-country-select" class="w-full px-3 py-2 text-left border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-sm bg-white">
+<span id="selected-billing-country">Select Country</span>
+<i class="ri-arrow-down-s-line float-right mt-0.5"></i>
+</button>
+<div id="billing-country-dropdown" class="absolute top-full left-0 right-0 bg-white border border-gray-300 rounded-lg shadow-lg z-10 hidden max-h-48 overflow-y-auto">
+<div class="billing-country-option px-3 py-2 hover:bg-gray-50 cursor-pointer" data-value="US">United States</div>
+<div class="billing-country-option px-3 py-2 hover:bg-gray-50 cursor-pointer" data-value="CA">Canada</div>
+<div class="billing-country-option px-3 py-2 hover:bg-gray-50 cursor-pointer" data-value="GB">United Kingdom</div>
+<div class="billing-country-option px-3 py-2 hover:bg-gray-50 cursor-pointer" data-value="AU">Australia</div>
+<div class="billing-country-option px-3 py-2 hover:bg-gray-50 cursor-pointer" data-value="DE">Germany</div>
+<div class="billing-country-option px-3 py-2 hover:bg-gray-50 cursor-pointer" data-value="FR">France</div>
+<div class="billing-country-option px-3 py-2 hover:bg-gray-50 cursor-pointer" data-value="IT">Italy</div>
+<div class="billing-country-option px-3 py-2 hover:bg-gray-50 cursor-pointer" data-value="ES">Spain</div>
+<div class="billing-country-option px-3 py-2 hover:bg-gray-50 cursor-pointer" data-value="NL">Netherlands</div>
+<div class="billing-country-option px-3 py-2 hover:bg-gray-50 cursor-pointer" data-value="SE">Sweden</div>
+</div>
+<input type="hidden" id="billing-country-input" name="billingCountry">
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="border-t pt-6">
+<h4 class="font-semibold text-gray-900 mb-4">Payment Information</h4>
+<div class="space-y-4">
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-3">Payment Method</label>
+<div class="space-y-2">
+<div class="flex items-center space-x-3">
+<input type="radio" id="card-payment" name="paymentMethod" value="card" class="opacity-0 absolute">
+<div class="w-4 h-4 border border-gray-300 rounded-full bg-white flex items-center justify-center relative cursor-pointer">
+<div class="w-2 h-2 bg-primary rounded-full hidden"></div>
+</div>
+<label for="card-payment" class="text-sm text-gray-700 cursor-pointer flex items-center space-x-2">
+<span>Credit/Debit Card</span>
+<div class="flex space-x-1">
+<i class="ri-visa-fill text-blue-600"></i>
+<i class="ri-mastercard-fill text-red-600"></i>
+</div>
+</label>
+</div>
+<div class="flex items-center space-x-3">
+<input type="radio" id="paypal-payment" name="paymentMethod" value="paypal" class="opacity-0 absolute">
+<div class="w-4 h-4 border border-gray-300 rounded-full bg-white flex items-center justify-center relative cursor-pointer">
+<div class="w-2 h-2 bg-primary rounded-full hidden"></div>
+</div>
+<label for="paypal-payment" class="text-sm text-gray-700 cursor-pointer flex items-center space-x-2">
+<span>PayPal</span>
+<i class="ri-paypal-fill text-blue-600"></i>
+</label>
+</div>
+</div>
+</div>
+<div id="card-details" class="space-y-4">
+<div>
+<label for="card-number" class="block text-sm font-medium text-gray-700 mb-1">Card Number</label>
+<input type="text" id="card-number" name="cardNumber" placeholder="1234 5678 9012 3456" maxlength="19" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-sm">
+</div>
+<div class="grid grid-cols-2 gap-3">
+<div>
+<label for="expiry-date" class="block text-sm font-medium text-gray-700 mb-1">Expiry Date</label>
+<input type="text" id="expiry-date" name="expiryDate" placeholder="MM/YY" maxlength="5" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-sm">
+</div>
+<div>
+<label for="cvv" class="block text-sm font-medium text-gray-700 mb-1">CVV</label>
+<input type="text" id="cvv" name="cvv" placeholder="123" maxlength="4" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-sm">
+</div>
+</div>
+<div>
+<label for="cardholder-name" class="block text-sm font-medium text-gray-700 mb-1">Cardholder Name</label>
+<input type="text" id="cardholder-name" name="cardholderName" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-sm">
+</div>
+</div>
+</div>
+</div>
+<div class="border-t pt-6">
+<h4 class="font-semibold text-gray-900 mb-4">Special Instructions</h4>
+<div>
+<label for="special-instructions" class="block text-sm font-medium text-gray-700 mb-1">Delivery Instructions (Optional)</label>
+<textarea id="special-instructions" name="specialInstructions" rows="3" maxlength="500" placeholder="Any special delivery instructions..." class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-sm resize-none"></textarea>
+<div class="text-right mt-1">
+<span id="instructions-char-count" class="text-xs text-gray-500">0/500</span>
+</div>
+</div>
+</div>
+<div class="border-t pt-6">
+<div class="flex items-start space-x-3 mb-4">
+<input type="checkbox" id="terms-agreement" required class="opacity-0 absolute">
+<div class="w-4 h-4 border border-gray-300 rounded bg-white mt-1 flex items-center justify-center relative cursor-pointer">
+<i class="ri-check-line text-xs text-white hidden"></i>
+</div>
+<label for="terms-agreement" class="text-sm text-gray-700 cursor-pointer">I agree to the <a href="#terms-of-service-page" class="text-primary hover:underline footer-page-link">Terms of Service</a> and <a href="#privacy-policy-page" class="text-primary hover:underline footer-page-link">Privacy Policy</a></label>
+</div>
+<div class="flex items-start space-x-3 mb-6">
+<input type="checkbox" id="newsletter-signup" class="opacity-0 absolute">
+<div class="w-4 h-4 border border-gray-300 rounded bg-white mt-1 flex items-center justify-center relative cursor-pointer">
+<i class="ri-check-line text-xs text-white hidden"></i>
+</div>
+<label for="newsletter-signup" class="text-sm text-gray-700 cursor-pointer">Subscribe to our newsletter for Christmas deals and updates</label>
+</div>
+</div>
+<button type="submit" class="w-full bg-primary hover:bg-red-700 text-white py-3 px-6 !rounded-button font-medium transition-colors whitespace-nowrap">
+Complete Order
+</button>
+</form>
+</div>
+</div>
+</div>
+</div>
+<footer class="bg-gray-900 text-white py-12">
+<div class="max-w-7xl mx-auto px-6">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+<div>
+<h5 class="text-xl font-['Pacifico'] text-primary mb-4">ToyBox Advent Co</h5>
+<p class="text-gray-300 mb-4">© 2025 ChristmasCalendars. All rights reserved. Made with ❤️ for magical holidays.</p>
+<div class="flex space-x-4">
+<a href="https://facebook.com" 
+target="_blank"
+rel="noopener noreferrer"
+class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition-colors">
+<i class="ri-facebook-fill"></i>
+</a>
+<a href="https://instagram.com" 
+target="_blank"
+rel="noopener noreferrer"
+class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition-colors">
+<i class="ri-instagram-fill"></i>
+</a>
+<a href="https://x.com"
+target="_blank"
+rel="noopener noreferrer"
+ class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition-colors">
+<i class="ri-twitter-fill"></i>
+</a>
+</div>
+</div>
+<div>
+<h6 class="font-semibold mb-4">Shop</h6>
+<ul class="space-y-2 text-gray-300">
+<li><a href="#products" class="footer-category-link hover:text-white transition-colors" data-category="all">All Products</a></li>
+<li><a href="#products" class="footer-category-link hover:text-white transition-colors" data-category="figurines">Figurines</a></li>
+<li><a href="#products" class="footer-category-link hover:text-white transition-colors" data-category="puzzles">Puzzles</a></li>
+<li><a href="#products" class="footer-category-link hover:text-white transition-colors" data-category="plushies">Plushies</a></li>
+</ul>
+</div>
+<div>
+<h6 class="font-semibold mb-4">Support</h6>
+<ul class="space-y-2 text-gray-300">
+<li><a href="#faq-page" class="footer-page-link hover:text-white transition-colors">FAQ</a></li>
+<li><a href="#contact" class="footer-page-link hover:text-white transition-colors">Contact Us</a></li>
+<li><a href="#shipping-info-page" class="footer-page-link hover:text-white transition-colors">Shipping Info</a></li>
+<li><a href="#returns-page" class="footer-page-link hover:text-white transition-colors">Returns</a></li>
+</ul>
+</div>
+<div>
+<h6 class="font-semibold mb-4">Company</h6>
+<ul class="space-y-2 text-gray-300">
+<li><a href="#about" class="footer-page-link hover:text-white transition-colors">About Us</a></li>
+<li><a href="#privacy-policy-page" class="footer-page-link hover:text-white transition-colors">Privacy Policy</a></li>
+<li><a href="#terms-of-service-page" class="footer-page-link hover:text-white transition-colors">Terms of Service</a></li>
+</ul>
+</div>
+</div>
+<div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+<p>&copy; 2025 ToyBox Advent Co. All rights reserved. Made with ❤️ for magical holidays.</p>
+</div>
+</div>
+</footer>
+
+
+<script id="snow-animation">
+function createSnowflake() {
+const snowflake = document.createElement('div');
+snowflake.className = 'snowflake';
+snowflake.innerHTML = '❄';
+snowflake.style.left = Math.random() * 100 + '%';
+snowflake.style.fontSize = Math.random() * 10 + 10 + 'px';
+snowflake.style.animationDuration = Math.random() * 3 + 2 + 's';
+snowflake.style.opacity = Math.random() * 0.6 + 0.4;
+const container = document.getElementById('snow-container');
+container.appendChild(snowflake);
+setTimeout(() => {
+if (snowflake.parentNode) {
+snowflake.parentNode.removeChild(snowflake);
+}
+}, 5000);
+}
+setInterval(createSnowflake, 300);
+</script>
+<script id="cart-functionality">
+document.addEventListener('DOMContentLoaded', function() {
+let cartItems = [];
+let cartCount = 0;
+let cartTotal = 0;
+const cartCountElement = document.getElementById('cart-count');
+const cartModal = document.getElementById('cart-modal');
+const cartBtn = document.getElementById('cart-btn');
+const closeCartBtn = document.getElementById('close-cart');
+const cartItemsContainer = document.getElementById('cart-items');
+const cartTotalElement = document.getElementById('cart-total');
+const allProductCards = document.querySelectorAll('.product-card'); // Use this for controls update
+const checkoutBtn = document.getElementById('checkout-btn');
+const checkoutModal = document.getElementById('checkout-modal');
+const closeCheckoutBtn = document.getElementById('close-checkout');
+const clearCartBtn = document.getElementById('clear-cart-btn');
+
+// Detail Modal elements
+const detailModal = document.getElementById('product-detail-modal');
+const closeDetailModalBtn = document.getElementById('close-detail-modal');
+const detailAddToCartContainer = document.getElementById('detail-add-to-cart-container');
+
+function updateCartDisplay() {
+  cartCountElement.textContent = cartCount;
+  cartTotalElement.textContent = '$' + cartTotal.toFixed(2);
+  
+  // Also update product card controls on the main page
+  updateProductCardControls();
+
+  if (cartItems.length === 0) {
+    cartItemsContainer.innerHTML = `
+<div class="text-center text-gray-500 py-16">
+<i class="ri-shopping-cart-line text-6xl mb-4"></i>
+<p class="text-xl">Your cart is empty</p>
+<p class="text-gray-400 mt-2">Add some magical advent calendars to get started!</p>
+</div>
+`;
+  } else {
+    document.querySelectorAll('.remove-item').forEach(btn => btn.removeEventListener('click', null));
+    document.querySelectorAll('.quantity-increase').forEach(btn => btn.removeEventListener('click', null));
+    document.querySelectorAll('.quantity-decrease').forEach(btn => btn.removeEventListener('click', null));
+
+
+    cartItemsContainer.innerHTML = `
+<div class="grid gap-4">
+${cartItems.map(item => `
+<div class="bg-gray-50 rounded-lg p-4 flex items-center justify-between">
+<div class="flex items-center space-x-4 flex-1">
+<img src="${item.image}" alt="${item.name}" class="w-16 h-16 object-cover rounded-lg flex-shrink-0">
+<div>
+<h4 class="font-semibold text-gray-900 text-lg mb-1">${item.name}</h4>
+<p class="text-primary font-bold text-xl">$${item.price.toFixed(2)} each</p>
+<p class="text-gray-600">Subtotal: $${(item.price * item.quantity).toFixed(2)}</p>
+</div>
+</div>
+<div class="flex items-center space-x-4 flex-shrink-0">
+<div class="flex items-center space-x-2">
+<button class="quantity-decrease bg-gray-200 hover:bg-gray-300 w-8 h-8 rounded-full flex items-center justify-center" data-id="${item.id}">
+<i class="ri-subtract-line text-sm"></i>
+</button>
+<span class="text-gray-900 font-medium w-8 text-center">${item.quantity}</span>
+<button class="quantity-increase bg-gray-200 hover:bg-gray-300 w-8 h-8 rounded-full flex items-center justify-center" data-id="${item.id}">
+<i class="ri-add-line text-sm"></i>
+</button>
+</div>
+<button class="remove-item text-red-500 hover:text-red-700 p-2 rounded-full hover:bg-red-50" data-id="${item.id}">
+<i class="ri-delete-bin-line text-lg"></i>
+</button>
+</div>
+</div>
+`).join('')}
+</div>
+`;
+    document.querySelectorAll('.remove-item').forEach(btn => {
+      btn.addEventListener('click', function() {
+        const itemId = this.getAttribute('data-id');
+        removeFromCart(itemId);
+      });
+    });
+    document.querySelectorAll('.quantity-increase').forEach(btn => {
+      btn.addEventListener('click', function() {
+        const itemId = this.getAttribute('data-id');
+        changeQuantity(itemId, 1);
+      });
+    });
+    document.querySelectorAll('.quantity-decrease').forEach(btn => {
+      btn.addEventListener('click', function() {
+        const itemId = this.getAttribute('data-id');
+        changeQuantity(itemId, -1);
+      });
+    });
+  }
+}
+
+function changeQuantity(id, delta) {
+    const item = cartItems.find(i => i.id === id);
+    if (!item) return;
+
+    if (delta > 0) {
+        item.quantity += delta;
+        cartCount += delta;
+        cartTotal += item.price * delta;
+    } else if (delta < 0) {
+        if (item.quantity > 1) {
+            item.quantity += delta; // Subtract 1
+            cartCount += delta; // Subtract 1
+            cartTotal += item.price * delta; // Subtract price
+        } else {
+            // Remove item if quantity is reduced to 0
+            removeFromCart(id);
+            return; // Exit early as removeFromCart calls updateCartDisplay
+        }
+    }
+    updateCartDisplay();
+}
+
+
+function addToCart(id, name, price, image) {
+  const existingItem = cartItems.find(item => item.id === id);
+  if (existingItem) {
+    existingItem.quantity++;
+  } else {
+    cartItems.push({ id, name, price, quantity: 1, image });
+  }
+  cartCount++;
+  cartTotal += price;
+  updateCartDisplay();
+}
+
+function removeFromCart(id) {
+  const itemIndex = cartItems.findIndex(item => item.id === id);
+  if (itemIndex > -1) {
+    const item = cartItems[itemIndex];
+    cartCount -= item.quantity;
+    cartTotal -= item.price * item.quantity;
+    cartItems.splice(itemIndex, 1);
+    updateCartDisplay();
+  }
+}
+
+// Clear All Items function
+function clearCart() {
+    if (cartItems.length === 0) {
+        return;
+    }
+    const confirmClear = confirm("Are you sure you want to clear your entire shopping cart?");
+    if (confirmClear) {
+        cartItems = [];
+        cartCount = 0;
+        cartTotal = 0;
+        updateCartDisplay();
+    }
+}
+
+// NEW FUNCTION: Update the display of controls on the main product cards
+function updateProductCardControls() {
+    allProductCards.forEach((card, index) => {
+        const productId = 'product-' + index;
+        const cartItem = cartItems.find(item => item.id === productId);
+        // Find the specific container holding the price and button
+        const controlContainer = card.querySelector('.flex.items-center.justify-between');
+        
+        // Remove the existing control/button element (which is the last child)
+        if (controlContainer.lastElementChild && (controlContainer.lastElementChild.classList.contains('add-to-cart') || controlContainer.lastElementChild.classList.contains('cart-control-widget'))) {
+            controlContainer.lastElementChild.remove();
+        }
+
+
+        if (cartItem) {
+            // Item is in cart: Show quantity controls
+            const controlsHTML = `
+                <div class="flex items-center space-x-2 cart-control-widget" data-product-id="${productId}">
+                    <button class="bg-primary hover:bg-red-700 text-white w-8 h-8 rounded-full flex items-center justify-center p-0.5 card-decrease-btn" data-id="${productId}">
+                        <i class="ri-subtract-line text-sm"></i>
+                    </button>
+                    <span class="text-gray-900 font-semibold text-lg w-6 text-center">${cartItem.quantity}</span>
+                    <button class="bg-secondary hover:bg-green-700 text-white w-8 h-8 rounded-full flex items-center justify-center p-0.5 card-increase-btn" data-id="${productId}">
+                        <i class="ri-add-line text-sm"></i>
+                    </button>
+                </div>
+            `;
+            controlContainer.insertAdjacentHTML('beforeend', controlsHTML);
+        } else {
+            // Item is NOT in cart: Show default 'Add to Cart' button
+            const defaultButtonHTML = `
+                <button class="add-to-cart bg-secondary hover:bg-green-700 text-white px-4 py-2 !rounded-button font-medium transition-colors whitespace-nowrap" data-product-index="${index}">
+                Add to Cart
+                </button>
+            `;
+            controlContainer.insertAdjacentHTML('beforeend', defaultButtonHTML);
+        }
+    });
+
+    // Re-attach listeners for the new controls
+    attachProductCardControlListeners();
+}
+
+function attachProductCardControlListeners() {
+    // Listener for the new 'Add to Cart' buttons (for items not yet in the cart)
+    document.querySelectorAll('.add-to-cart').forEach(button => {
+        // Ensure listener is only attached once
+        if (button.dataset.listenerAttached) return;
+
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            const productCard = this.closest('.product-card');
+            const productName = productCard.querySelector('h4').textContent;
+            const productPrice = parseFloat(productCard.querySelector('.text-2xl').textContent.replace('$', ''));
+            const productImage = productCard.getAttribute('data-image');
+            const productId = 'product-' + this.getAttribute('data-product-index');
+            addToCart(productId, productName, productPrice, productImage);
+        });
+        button.dataset.listenerAttached = 'true';
+    });
+
+    // Listeners for quantity controls on the product cards
+    document.querySelectorAll('.card-increase-btn').forEach(btn => {
+        // Ensure listener is only attached once
+        if (btn.dataset.listenerAttached) return;
+
+        btn.addEventListener('click', function() {
+            changeQuantity(this.getAttribute('data-id'), 1);
+        });
+        btn.dataset.listenerAttached = 'true';
+    });
+
+    document.querySelectorAll('.card-decrease-btn').forEach(btn => {
+        // Ensure listener is only attached once
+        if (btn.dataset.listenerAttached) return;
+
+        btn.addEventListener('click', function() {
+            changeQuantity(this.getAttribute('data-id'), -1);
+        });
+        btn.dataset.listenerAttached = 'true';
+    });
+}
+
+
+// Function to render detail modal controls
+function renderDetailModalControls(id, name, price, image) {
+    const cartItem = cartItems.find(item => item.id === id);
+    let controlsHTML = '';
+
+    if (cartItem) {
+        // Item is in cart: Show quantity controls
+        controlsHTML = `
+            <div class="flex items-center space-x-3 cart-control-widget" data-product-id="${id}">
+                <button class="bg-primary hover:bg-red-700 text-white w-10 h-10 rounded-full flex items-center justify-center card-decrease-btn-detail" data-id="${id}">
+                    <i class="ri-subtract-line text-lg"></i>
+                </button>
+                <span class="text-gray-900 font-bold text-2xl w-8 text-center">${cartItem.quantity}</span>
+                <button class="bg-secondary hover:bg-green-700 text-white w-10 h-10 rounded-full flex items-center justify-center card-increase-btn-detail" data-id="${id}">
+                    <i class="ri-add-line text-lg"></i>
+                </button>
+            </div>
+        `;
+    } else {
+        // Item is NOT in cart: Show default 'Add to Cart' button
+        controlsHTML = `
+            <button id="detail-add-to-cart" 
+                class="bg-secondary hover:bg-green-700 text-white px-6 py-3 !rounded-button font-medium transition-colors whitespace-nowrap"
+                data-product-id="${id}" 
+                data-product-name="${name}" 
+                data-product-price="${price}" 
+                data-product-image="${image}">
+                Add to Cart
+            </button>
+        `;
+    }
+
+    detailAddToCartContainer.innerHTML = controlsHTML;
+
+    // Re-attach listeners for detail modal controls
+    if (!cartItem) {
+        // Listener for the new 'Add to Cart' button in modal
+        document.getElementById('detail-add-to-cart').addEventListener('click', function() {
+            const id = this.getAttribute('data-product-id');
+            const name = this.getAttribute('data-product-name');
+            const price = parseFloat(this.getAttribute('data-product-price'));
+            const image = this.getAttribute('data-product-image');
+
+            addToCart(id, name, price, image);
+            renderDetailModalControls(id, name, price, image); // Update controls instantly
+        });
+    } else {
+        // Listeners for quantity controls in modal
+        document.querySelectorAll('.card-increase-btn-detail').forEach(btn => {
+            btn.addEventListener('click', function() {
+                changeQuantity(this.getAttribute('data-id'), 1);
+                renderDetailModalControls(id, name, price, image); // Update controls instantly
+            });
+        });
+
+        document.querySelectorAll('.card-decrease-btn-detail').forEach(btn => {
+            btn.addEventListener('click', function() {
+                changeQuantity(this.getAttribute('data-id'), -1);
+                // If item is removed, the detail modal controls should reflect that
+                if (!cartItems.find(i => i.id === id)) {
+                   renderDetailModalControls(id, name, price, image); 
+                } else {
+                   renderDetailModalControls(id, name, price, image);
+                }
+            });
+        });
+    }
+}
+
+
+// Open Product Detail Modal function
+function openProductDetail(name, price, image, description, id) {
+    document.getElementById('detail-product-name').textContent = name;
+    document.getElementById('detail-product-image').src = image;
+    document.getElementById('detail-product-description').textContent = description;
+    document.getElementById('detail-product-price').textContent = '$' + price.toFixed(2);
+    
+    renderDetailModalControls(id, name, price, image); // Render dynamic controls
+    
+    detailModal.classList.remove('hidden');
+}
+
+
+// Event listener for clicking on the product card (excluding the Add to Cart button)
+allProductCards.forEach((card, index) => {
+    card.addEventListener('click', function(e) {
+        // Prevent opening the modal if the click was on a cart control button or the span.
+        if (e.target.closest('.cart-control-widget') || e.target.closest('.add-to-cart')) {
+            return;
+        }
+
+        const productName = this.querySelector('h4').textContent;
+        const productPrice = parseFloat(this.querySelector('.text-2xl').textContent.replace('$', ''));
+        const productImage = this.getAttribute('data-image');
+        const productDescription = this.getAttribute('data-description');
+        const productId = 'product-' + index;
+
+        openProductDetail(productName, productPrice, productImage, productDescription, productId);
+    });
+});
+
+// Initial call to set up the product cards on load
+updateProductCardControls();
+
+
+// Event listener to close the detail modal
+closeDetailModalBtn.addEventListener('click', function() {
+    detailModal.classList.add('hidden');
+});
+detailModal.addEventListener('click', function(e) {
+  if (e.target === detailModal) {
+    detailModal.classList.add('hidden');
+  }
+});
+
+
+cartBtn.addEventListener('click', function() {
+  cartModal.classList.remove('hidden');
+});
+closeCartBtn.addEventListener('click', function() {
+  cartModal.classList.add('hidden');
+});
+cartModal.addEventListener('click', function(e) {
+  if (e.target === cartModal) {
+    cartModal.classList.add('hidden');
+  }
+});
+
+// Event listener for Clear Cart Button
+clearCartBtn.addEventListener('click', clearCart);
+
+checkoutBtn.addEventListener('click', function() {
+  if (cartItems.length === 0) {
+    return;
+  }
+  cartModal.classList.add('hidden');
+  checkoutModal.classList.remove('hidden');
+  updateCheckoutSummary();
+});
+closeCheckoutBtn.addEventListener('click', function() {
+  checkoutModal.classList.add('hidden');
+});
+checkoutModal.addEventListener('click', function(e) {
+  if (e.target === checkoutModal) {
+    checkoutModal.classList.add('hidden');
+  }
+});
+
+function updateCheckoutSummary() {
+  const checkoutItems = document.getElementById('checkout-items');
+  const checkoutTotal = document.getElementById('checkout-total');
+  checkoutItems.innerHTML = cartItems.map(item => `
+<div class="flex justify-between text-sm items-center">
+<div class="flex items-center space-x-2">
+<img src="${item.image}" alt="${item.name}" class="w-8 h-8 object-cover rounded-md flex-shrink-0">
+<div>${item.name} x${item.quantity}</div>
+</div>
+<span>$${(item.price * item.quantity).toFixed(2)}</span>
+</div>
+`).join('');
+  checkoutTotal.textContent = '$' + cartTotal.toFixed(2);
+}
+});
+</script>
+<script id="navigation-functionality">
+document.addEventListener('DOMContentLoaded', function() {
+    const header = document.querySelector('header');
+    // Define all main content sections and all standalone pages
+    const mainSections = ['hero', 'categories', 'products', 'about', 'contact'];
+    const pageSections = ['faq-page', 'shipping-info-page', 'returns-page', 'privacy-policy-page', 'terms-of-service-page'];
+
+    function showSection(id, display='block') {
+        const el = document.getElementById(id);
+        if (el) el.style.display = display;
+    }
+
+    function hideSection(id) {
+        const el = document.getElementById(id);
+        if (el) el.style.display = 'none';
+    }
+
+    // Hide standalone pages on initial load (main sections already visible by default)
+    pageSections.forEach(id => hideSection(id));
+
+    function scrollToId(id) {
+        const target = document.getElementById(id);
+        if (!target) return;
+        const offset = header ? header.offsetHeight : 0;
+        const top = target.offsetTop - offset;
+        window.scrollTo({ top, behavior: 'smooth' });
+    }
+
+    function showMainShop() {
+        // Show all main sections
+        showSection('hero', 'block');
+        showSection('categories', 'block');
+        showSection('products', 'block');
+        showSection('about', 'block');
+        showSection('contact', 'block');
+        // Hide standalone pages
+        pageSections.forEach(id => hideSection(id));
+    }
+
+    // Top navigation links (Home, Products, About, Contact)
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            if (!targetId) return;
+
+            const cleanId = targetId.replace('#', '');
+            
+            // FIX: If clicking the 'About' button from the top nav, treat it as a dedicated page view
+            if (cleanId === 'about') {
+                // Hide all sections except 'about' and scroll to it.
+                mainSections.forEach(id => hideSection(id));
+                pageSections.forEach(id => hideSection(id));
+                showSection('about', 'block');
+                scrollToId('about');
+                return;
+            }
+
+            // Default behavior for other nav links (Home, Products, Contact) - show the full shop
+            showMainShop();
+            scrollToId(cleanId);
+        });
+    });
+    
+    // Footer page links (FAQ, Shipping, Returns, Privacy, Terms, About Us, etc.)
+    const footerPageLinks = document.querySelectorAll('.footer-page-link');
+    footerPageLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            if (!targetId) return;
+            const cleanId = targetId.replace('#', '');
+
+            // Identify if the target is a dedicated page (#faq-page) or a page-like section (about, contact)
+            const isPageSection = pageSections.includes(cleanId) || cleanId === 'about' || cleanId === 'contact';
+            
+            // 1. If navigating to a dedicated page section (or About/Contact from footer)
+            if (isPageSection) {
+                // Hide all main sections 
+                mainSections.forEach(id => hideSection(id));
+                // Show only requested page (including page-like About/Contact sections)
+                pageSections.forEach(id => hideSection(id));
+                showSection(cleanId, 'block');
+                scrollToId(cleanId);
+                return;
+            } 
+            
+            // 2. If navigating to a main section link (#products)
+            if (mainSections.includes(cleanId)) {
+                showMainShop();
+                scrollToId(cleanId);
+            }
+        });
+    });
+
+    // Back to Shop button used on policy sections
+    window.backToShop = function() {
+        showMainShop();
+        scrollToId('products');
+    };
+});
+</script>
+<script id="checkout-functionality">
+document.addEventListener('DOMContentLoaded', function() {
+const checkoutForm = document.getElementById('checkout-form');
+const sameAsShippingCheckbox = document.getElementById('same-as-shipping');
+const billingSection = document.getElementById('billing-section');
+const cardPaymentRadio = document.getElementById('card-payment');
+const paypalPaymentRadio = document.getElementById('paypal-payment');
+const cardDetails = document.getElementById('card-details');
+const countrySelect = document.getElementById('country-select');
+const countryDropdown = document.getElementById('country-dropdown');
+const countryInput = document.getElementById('country-input');
+const billingCountrySelect = document.getElementById('billing-country-select');
+const billingCountryDropdown = document.getElementById('billing-country-dropdown');
+const billingCountryInput = document.getElementById('billing-country-input');
+const specialInstructions = document.getElementById('special-instructions');
+const instructionsCharCount = document.getElementById('instructions-char-count');
+const cardNumber = document.getElementById('card-number');
+const expiryDate = document.getElementById('expiry-date');
+const cvv = document.getElementById('cvv');
+cardPaymentRadio.checked = true;
+cardPaymentRadio.nextElementSibling.querySelector('div').classList.remove('hidden');
+function setupCustomCheckbox(checkboxId) {
+const checkbox = document.getElementById(checkboxId);
+const customCheckbox = checkbox.nextElementSibling;
+const checkIcon = customCheckbox.querySelector('i');
+checkbox.addEventListener('change', function() {
+if (this.checked) {
+customCheckbox.style.backgroundColor = '#dc2626';
+customCheckbox.style.borderColor = '#dc2626';
+checkIcon.classList.remove('hidden');
+} else {
+customCheckbox.style.backgroundColor = 'white';
+customCheckbox.style.borderColor = '#d1d5db';
+checkIcon.classList.add('hidden');
+}
+});
+customCheckbox.addEventListener('click', function() {
+checkbox.checked = !checkbox.checked;
+checkbox.dispatchEvent(new Event('change'));
+});
+}
+function setupCustomRadio(radioName) {
+const radios = document.querySelectorAll(`input[name="${radioName}"]`);
+radios.forEach(radio => {
+const customRadio = radio.nextElementSibling;
+const dot = customRadio.querySelector('div');
+radio.addEventListener('change', function() {
+radios.forEach(r => {
+const customR = r.nextElementSibling;
+const d = customR.querySelector('div');
+if (r.checked) {
+customR.style.borderColor = '#dc2626';
+d.classList.remove('hidden');
+} else {
+customR.style.borderColor = '#d1d5db';
+d.classList.add('hidden');
+}
+});
+});
+customRadio.addEventListener('click', function() {
+radio.checked = true;
+radio.dispatchEvent(new Event('change'));
+});
+});
+}
+setupCustomCheckbox('same-as-shipping');
+setupCustomCheckbox('terms-agreement');
+setupCustomCheckbox('newsletter-signup');
+setupCustomRadio('paymentMethod');
+sameAsShippingCheckbox.addEventListener('change', function() {
+if (this.checked) {
+billingSection.style.display = 'none';
+const billingInputs = billingSection.querySelectorAll('input');
+billingInputs.forEach(input => input.required = false);
+} else {
+billingSection.style.display = 'block';
+const billingInputs = billingSection.querySelectorAll('input[name*="billing"]');
+billingInputs.forEach(input => {
+if (!input.name.includes('addressLine2')) {
+input.required = true;
+}
+});
+}
+});
+cardPaymentRadio.addEventListener('change', function() {
+if (this.checked) {
+cardDetails.style.display = 'block';
+document.getElementById('card-number').required = true;
+document.getElementById('expiry-date').required = true;
+document.getElementById('cvv').required = true;
+document.getElementById('cardholder-name').required = true;
+}
+});
+paypalPaymentRadio.addEventListener('change', function() {
+if (this.checked) {
+cardDetails.style.display = 'none';
+document.getElementById('card-number').required = false;
+document.getElementById('expiry-date').required = false;
+document.getElementById('cvv').required = false;
+document.getElementById('cardholder-name').required = false;
+}
+});
+function setupCountryDropdown(selectBtn, dropdown, input, optionClass, selectedSpan) {
+selectBtn.addEventListener('click', function(e) {
+e.preventDefault();
+dropdown.classList.toggle('hidden');
+});
+document.addEventListener('click', function(e) {
+if (!selectBtn.contains(e.target) && !dropdown.contains(e.target)) {
+dropdown.classList.add('hidden');
+}
+});
+document.querySelectorAll('.' + optionClass).forEach(option => {
+option.addEventListener('click', function() {
+const value = this.getAttribute('data-value');
+const text = this.textContent;
+input.value = value;
+selectedSpan.textContent = text;
+dropdown.classList.add('hidden');
+});
+});
+}
+setupCountryDropdown(
+countrySelect,
+countryDropdown,
+countryInput,
+'country-option',
+document.getElementById('selected-country')
+);
+setupCountryDropdown(
+billingCountrySelect,
+billingCountryDropdown,
+billingCountryInput,
+'billing-country-option',
+document.getElementById('selected-billing-country')
+);
+specialInstructions.addEventListener('input', function() {
+const currentLength = this.value.length;
+instructionsCharCount.textContent = currentLength + '/500';
+if (currentLength >= 500) {
+instructionsCharCount.style.color = '#dc2626';
+} else {
+instructionsCharCount.style.color = '#6b7280';
+}
+});
+cardNumber.addEventListener('input', function() {
+let value = this.value.replace(/\s/g, '').replace(/[^0-9]/gi, '');
+let formattedValue = '';
+for (let i = 0; i < value.length; i++) {
+if (i > 0 && i % 4 === 0) {
+formattedValue += ' ';
+}
+formattedValue += value[i];
+}
+this.value = formattedValue;
+});
+expiryDate.addEventListener('input', function() {
+let value = this.value.replace(/\D/g, '');
+if (value.length >= 2) {
+value = value.substring(0, 2) + '/' + value.substring(2, 4);
+}
+this.value = value;
+});
+cvv.addEventListener('input', function() {
+this.value = this.value.replace(/[^0-9]/g, '');
+});
+checkoutForm.addEventListener('submit', function(e) {
+e.preventDefault();
+const instructionsLength = specialInstructions.value.length;
+if (instructionsLength > 500) {
+return;
+}
+if (!document.getElementById('terms-agreement').checked) {
+return;
+}
+const submitBtn = this.querySelector('button[type="submit"]');
+const originalText = submitBtn.textContent;
+submitBtn.textContent = 'Processing...';
+submitBtn.disabled = true;
+setTimeout(() => {
+submitBtn.textContent = 'Order Complete!';
+submitBtn.style.backgroundColor = '#16a34a';
+setTimeout(() => {
+document.getElementById('checkout-modal').classList.add('hidden');
+// Assuming cart management variables are globally accessible or managed by another script
+// The successful checkout should clear the cart, so we simulate clearing it here:
+// cartItems = []; 
+// cartCount = 0;
+// cartTotal = 0;
+// updateCartDisplay();
+const successModal = document.createElement('div');
+successModal.className = 'fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4';
+successModal.innerHTML = `
+<div class="bg-white rounded-lg p-8 max-w-md w-full text-center">
+<div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+<i class="ri-check-line text-2xl text-green-600"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-2">Order Confirmed!</h3>
+<p class="text-gray-600 mb-6">Thank you for your purchase. You will receive a confirmation email shortly.</p>
+<button class="bg-primary hover:bg-red-700 text-white px-6 py-2 !rounded-button font-medium transition-colors whitespace-nowrap">
+Close
+</button>
+</div>
+`;
+document.body.appendChild(successModal);
+successModal.querySelector('button').addEventListener('click', function() {
+document.body.removeChild(successModal);
+});
+successModal.addEventListener('click', function(e) {
+if (e.target === successModal) {
+document.body.removeChild(successModal);
+}
+});
+submitBtn.textContent = originalText;
+submitBtn.style.backgroundColor = '';
+submitBtn.disabled = false;
+this.reset();
+instructionsCharCount.textContent = '0/500';
+instructionsCharCount.style.color = '#6b7280';
+document.getElementById('selected-country').textContent = 'Select Country';
+document.getElementById('selected-billing-country').textContent = 'Select Country';
+}, 1500);
+}, 2000);
+});
+});
+</script>
+<script id="category-filtering">
+document.addEventListener('DOMContentLoaded', function() {
+  const categoryButtons = document.querySelectorAll('.category-filter');
+  const footerLinks = document.querySelectorAll('.footer-category-link');
+  const productCards = document.querySelectorAll('.product-card');
+
+  function applyBestsellerHighlight() {
+    productCards.forEach(card => {
+      if (card.getAttribute('data-bestseller') === 'true') {
+        card.classList.add('bestseller-highlight');
+      }
+    });
+  }
+
+  function setCategory(category) {
+    categoryButtons.forEach(btn => {
+      if (btn.getAttribute('data-category') === category) {
+        btn.classList.add('active');
+      } else {
+        btn.classList.remove('active');
+      }
+    });
+
+    productCards.forEach(card => {
+      card.style.display = 'none';
+      card.classList.remove('bestseller-highlight');
+    });
+
+    if (category === 'bestseller') {
+      // Only show best sellers
+      productCards.forEach(card => {
+        if (card.getAttribute('data-bestseller') === 'true') {
+          card.style.display = 'block';
+          card.classList.add('bestseller-highlight');
+        }
+      });
+    } else if (category === 'all') {
+      // Show all, highlight best sellers
+      productCards.forEach(card => {
+        card.style.display = 'block';
+      });
+      applyBestsellerHighlight();
+    } else {
+      productCards.forEach(card => {
+        if (card.getAttribute('data-category') === category) {
+          card.style.display = 'block';
+        }
+      });
+      applyBestsellerHighlight();
+    }
+    const productsSection = document.querySelector('#products');
+    if (productsSection) {
+      const header = document.querySelector('header');
+      const headerHeight = header ? header.offsetHeight : 0;
+      const top = productsSection.offsetTop - headerHeight;
+      window.scrollTo({ top, behavior: 'smooth' });
+    }
+  }
+
+  categoryButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      const category = this.getAttribute('data-category');
+      setCategory(category);
+    });
+  });
+
+  footerLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      const category = this.getAttribute('data-category');
+      setCategory(category);
+    });
+  });
+  setCategory('all');
+});
+</script>
+
+<elevenlabs-convai agent-id="agent_6001kab1qhvcef79cj0hmcgpspv3"></elevenlabs-convai><script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
