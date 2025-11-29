@@ -343,19 +343,16 @@ Add to Cart
         <h4 class="text-3xl font-bold text-gray-900 mb-6 mt-12">See Our Magic in Action</h4>
         <div class="max-w-4xl mx-auto bg-gray-100 p-4 rounded-lg shadow-xl">
             <div class="aspect-video">
-<iframe 
-  width="100%" 
-  height="100%" 
-  src="https://www.youtube-nocookie.com/embed/DJjDBC2KRbw"
-  title="YouTube video player"
-  frameborder="0"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-  allowfullscreen
-  class="rounded-lg shadow-md w-full h-full">
-</iframe>
-
-
-
+                <iframe 
+                    width="100%" 
+                    height="100%" 
+                    src="https://www.youtube.com/embed/DJjDBC2KRbw?si=9Hea-OplsIorouB5" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" 
+                    allowfullscreen
+                    class="rounded-lg shadow-md w-full h-full"
+                ></iframe>
             </div>
             <p class="text-sm text-gray-500 mt-4">Discover the joy and care we put into every Advent Calendar box.</p>
         </div>
@@ -1728,6 +1725,7 @@ document.addEventListener('DOMContentLoaded', function() {
       });
       applyBestsellerHighlight();
     }
+
     const productsSection = document.querySelector('#products');
     if (productsSection) {
       const header = document.querySelector('header');
@@ -1737,6 +1735,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
 
+
   categoryButtons.forEach(button => {
     button.addEventListener('click', function() {
       const category = this.getAttribute('data-category');
@@ -1744,15 +1743,25 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
+
   footerLinks.forEach(link => {
     link.addEventListener('click', function(e) {
       e.preventDefault();
       const category = this.getAttribute('data-category');
+
+
+      if (window.backToShop) {
+        window.backToShop();   // shows hero + categories + products + about + contact
+      }
+
+ 
       setCategory(category);
     });
   });
+
+
   setCategory('all');
 });
 </script>
 
-<elevenlabs-convai agent-id="agent_6001kab1qhvcef79cj0hmcgpspv3"></elevenlabs-convai><script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
+<elevenlabs-convai agent-id="agent_6301kb49t5scf2hscdf696ghctxa"></elevenlabs-convai><script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
